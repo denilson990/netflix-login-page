@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="#"><img src="imagens/logo.svg" alt="logo"></a>
+    </nav>
+    <div class="form-wrapper">
+        <h2>Entrar</h2>
+        <form id="loginForm">
+            <div class="form-control">
+                <input type="text" id="email" required>
+                <label>Email ou número de celular</label>
+            </div>
+            <div class="form-control">
+                <input type="password" id="password" required>
+                <label>Senha</label>
+            </div>
+            <button type="submit">Entrar</button>
+            <div class="form-help"> 
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Lembre-se de mim</label>
+                </div>
+                <a href="#">Esqueceu a senha?</a>
+            </div>
+        </form>
+        <p>Novo por aqui? <a href="#">Assine agora</a></p>
+        <small>
+            Esta página é protegida pelo Google reCAPTCHA para garantir que você não é um robô. 
+            <a href="#">Saiba mais.</a>
+        </small>
+    </div>
+    <div class="error-message" id="errorMessage"></div> <!-- Mensagem de erro -->
+    <script src="script.js"></script>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Obter valores dos campos de entrada
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            // Verificar se os campos estão preenchidos
+            if (email.trim() === '' || password.trim() === '') {
+                alert('Por favor, preencha todos os campos');
+                return;
+            }
+
+            // Simular autenticação (substitua isso pela lógica de autenticação real no servidor)
+            if (email === 'teste@teste' && password === 'teste') {
+                var errorMessage = 'Senha incorreta para ' + email + '. Você pode usar um código de acesso, redefinir sua senha ou tentar novamente.';
+                alert(errorMessage);
+            } else {
+                alert('Credenciais inválidas. Tente novamente.');
+            }
+        });
+    </script>
+</body>
+</html>

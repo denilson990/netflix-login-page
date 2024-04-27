@@ -1,0 +1,199 @@
+/* Importa a fonte Roboto do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+
+/* Define estilos básicos para todos os elementos, incluindo margem e padding zerados e caixa de modelo de borda */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Define a fonte padrão como Roboto */
+}
+
+/* Estilos para o corpo da página */
+body {
+    background: #000; /* Define o fundo como preto */
+}
+
+/* Pseudo-elemento para adicionar uma imagem de fundo em tela cheia */
+body::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.5; /* Opacidade reduzida para a imagem de fundo */
+    width: 100%;
+    height: 100%;
+    background: url("imagens/hero-img.jpg") center/cover; /* Imagem de fundo esticada e centralizada */
+}
+
+/* Estilos para a barra de navegação */
+nav {
+    position: fixed; /* Barra de navegação fixa na parte superior */
+    padding: 25px 60px; /* Espaçamento interno */
+    z-index: 1; /* Coloca a barra de navegação acima de outros elementos */
+}
+
+/* Estilos para a logo na barra de navegação */
+nav a img {
+    width: 167px; /* Define a largura da imagem da logo */
+}
+
+/* Estilos para o wrapper do formulário de login */
+.form-wrapper {
+    position: absolute; /* Posicionamento absoluto para centralizar vertical e horizontalmente */
+    left: 50%;
+    top: 50%;
+    border-radius: 3px; /* Borda arredondada */
+    padding: 65px; /* Espaçamento interno */
+    width: 450px; /* Largura do formulário */
+    transform: translate(-50%, -50%); /* Centraliza o formulário */
+    background: rgba(0, 0, 0, .75); /* Fundo semi-transparente */
+}
+
+/* Estilos para o título do formulário */
+.form-wrapper h2 {
+    color: #fff; /* Cor do texto */
+    font-size: 2rem; /* Tamanho da fonte */
+}
+
+/* Estilos para o formulário dentro do wrapper */
+.form-wrapper form {
+    margin: 25px 0 65px; /* Espaçamento externo */
+}
+
+/* Estilos para os campos de formulário */
+.form-control {
+    position: relative;
+    margin-bottom: 16px; /* Espaçamento entre os campos */
+}
+
+/* Estilos para os inputs dos campos de formulário */
+.form-control input {
+    height: 50px; /* Altura dos inputs */
+    width: 100%; /* Largura dos inputs */
+    background: rgba(51, 51, 51, 0.3); /* Cor de fundo */
+    border: none; /* Remove a borda padrão */
+    outline: none; /* Remove o contorno ao focar */
+    border-radius: 4px; /* Borda arredondada */
+    color: #fff; /* Cor do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    padding: 0 20px; /* Espaçamento interno */
+}
+
+/* Estilos para os labels dos campos de formulário */
+.form-control label {
+    position: absolute; /* Posição absoluta para sobrepor os inputs */
+    left: 20px;
+    top: 50%; /* Alinhamento vertical */
+    transform: translateY(-50%);
+    font-size: 1rem; /* Tamanho da fonte */
+    pointer-events: none;
+    color: #8c8c8c; /* Cor do texto */
+    transition: all 0.1s ease; /* Transição suave para o label */
+}
+
+/* Estilos para os labels dos campos de formulário quando focados ou preenchidos */
+.form-control input:focus ~ label,
+.form-control input:valid ~ label {
+    font-size: 0.75rem; /* Tamanho menor do label */
+    transform: translateY(-130%); /* Movimento para cima */
+}
+
+/* Estilos para o botão de submissão do formulário */
+form button {
+    width: 100%; /* Largura total */
+    padding: 13px 0; /* Espaçamento interno */
+    font-size: 1rem; /* Tamanho da fonte */
+    background: #C11119; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    font-weight: 500; /* Peso da fonte */
+    border-radius: 5px; /* Borda arredondada */
+    border: 1px solid transparent; /* Borda transparente */
+    outline: none; /* Remove o contorno ao focar */
+    margin: 5px 0 10px; /* Espaçamento externo */
+    cursor: pointer; /* Cursor ao passar por cima */
+    transition: 0.1s ease; /* Transição suave */
+}
+
+/* Estilos para o botão de submissão do formulário quando hover */
+form button:hover {
+    background: #C11119; /* Altera a cor de fundo */
+}
+
+/* Estilos para os links dentro do formulário */
+.form-wrapper a {
+    text-decoration: none; /* Remove a sublinhado */
+}
+
+/* Estilos para os links dentro do formulário quando hover */
+.form-wrapper a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Estilos para elementos de texto secundários dentro do formulário */
+.form-wrapper,
+.form-wrapper :where(label, p, small, a) {
+    color: #b3b3b3; /* Cor do texto */
+}
+
+/* Estilos para o grupo de ajuda do formulário */
+.form-help {
+    display: flex; /* Exibe os elementos em linha */
+    justify-content: space-between; /* Espaçamento uniforme entre os elementos */
+}
+
+/* Estilos para a opção 'lembrar-me' dentro do formulário */
+.remember-me {
+    display: flex; /* Exibe os elementos em linha */
+}
+
+/* Estilos para os links de ajuda e de privacidade dentro do formulário */
+.form-help :where(label, a) {
+    font-size: 0.9rem; /* Tamanho da fonte menor */
+}
+
+/* Estilos para os links dentro dos parágrafos e texto pequeno */
+.form-wrapper p a,
+.form-wrapper small a {
+    color: #fff; /* Cor do texto */
+}
+
+/* Estilos para a responsividade em telas menores */
+@media (max-width: 740px) {
+    body::before {
+        display: none; /* Esconde a imagem de fundo em telas menores */
+    }
+
+    nav,
+    .form-wrapper {
+        padding: 20px; /* Reduz o espaçamento interno */
+    }
+
+    nav a img {
+        width: 140px; /* Reduz a largura da logo */
+    }
+
+    .form-wrapper {
+        width: 100%; /* Largura total do formulário */
+        top: 43%; /* Ajuste da posição vertical */
+    }
+
+    .form-wrapper form {
+        margin: 25px 0 40px; /* Reduz o espaçamento entre o formulário */
+    }
+}
+
+/* Adicione estilos para a mensagem de erro */
+.error-message {
+    display: none;
+    background-color: #ff4d4f;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.error-message.show {
+    display: block;
+}
